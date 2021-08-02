@@ -1,0 +1,83 @@
+/* credit to "Michael Howell" for source code */
+
+/* The outermost wrapper */
+#sf-navbar {
+  z-index: 1040;
+  position: fixed;
+  top: -10px;
+  left: 80px;
+  right: 0;
+}
+
+body[class*="archetype-"] #sf-navbar {
+  position: absolute;
+}
+/* This inner wrapper makes sure the nav bar respects your forum's max width */
+span#sf-top-links {
+  display: block !important;
+  margin: 5px auto 0 auto;
+  max-width: 1110px;
+}
+/* The list of links itself */
+.sf-nav-link-container li {
+  display: inline-block;
+  float: left;
+}
+/* <a> tags are links, while the <b> tag is the current page */
+.sf-nav-link-container {
+  display: block;
+  overflow: hidden;
+  margin-left: 160px;
+  position: absolute;
+}
+.sf-nav-link-container a,
+.sf-nav-link-container b {
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  padding: 1em 1.25em;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.sf-nav-link-container a:hover,
+.sf-nav-link-container a:active,
+.sf-nav-link-container a:focus {
+  background: #333;
+  color: #fff;
+}
+/* small-screen mode */
+@media screen and (max-width: 1024px) {
+  /* the .js makes sure that "small-screen-mode" overrides "big-screen-mode */
+  .js div#bors-navbar {
+    position: static;
+    margin-top: -1em;
+    margin-bottom: 1em;
+  }
+  .sf-nav-link-container {
+    position: static;
+    margin-left: 0;
+  }
+}
+
+/* This part makes the header work on mobile as well and not covering the login button */
+.sf-nav-link-container {
+  position: fixed;
+  top: -10;
+}
+
+@media screen and (max-width: 1024px) {
+  .sf-nav-link-container {
+    position: relative;
+    z-index: 1040;
+  }
+}
+
+#sf-navbar {
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  #sf-navbar {
+    z-index: 999 !important;
+  }
+}
