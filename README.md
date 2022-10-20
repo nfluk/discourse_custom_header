@@ -1,2 +1,2 @@
 # discourse_custom_header
-make a custom header for your discourse forum
+made a custom header for discourse forums
